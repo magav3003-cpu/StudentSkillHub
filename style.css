@@ -1,0 +1,347 @@
+/* Core Styling & Variables */
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --accent-hover: #0ea5e9;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Responsive Navbar */
+header {
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #334155;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: var(--transition);
+}
+
+/* Layout Main Content */
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.05em;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Buttons & Interactive Elements */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Skills Cards Grid */
+.skills-section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.skills-section h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+/* Contact Form Elements */
+.contact-form {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-dark);
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.form-feedback {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.form-feedback.success {
+    background-color: #059669;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Interactive Chatbot UI Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background-color: var(--bg-card);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.chat-widget.minimized {
+    transform: translateY(calc(100% - 45px));
+}
+
+.chat-header {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.chat-body {
+    height: 250px;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.msg {
+    max-width: 80%;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.msg.bot {
+    background-color: #334155;
+    align-self: flex-start;
+}
+
+.msg.user {
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    align-self: flex-end;
+}
+
+.chat-footer {
+    display: flex;
+    border-top: 1px solid #334155;
+    padding: 0.5rem;
+}
+
+.chat-footer input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+}
+
+.chat-footer input:focus {
+    outline: none;
+}
+
+.chat-footer button {
+    background: var(--accent);
+    border: none;
+    color: var(--bg-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Footer layout */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #334155;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Responsive Breakpoints (Mobile First) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--bg-card);
+        padding: 1.5rem;
+        border-bottom: 1px solid #334155;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+}
