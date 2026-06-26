@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | StudentSkillHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🚀 StudentSkillHub</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Learn from Peers. Teach what you love.</h1>
+            <p>The ultimate vibe-coding platform for students to swap skills, collaborate on code, and grow together.</p>
+            <a href="#skills" class="btn">Explore Skills</a>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>Trending Skills to Learn</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>💻 UI/UX Design</h3>
+                    <p>Master Figma layouts, wireframing, and user testing workflows.</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Python & AI</h3>
+                    <p>Build automation scripts and explore machine learning basics.</p>
+                </div>
+                <div class="card">
+                    <h3>🎨 Web Development</h3>
+                    <p>Learn HTML, CSS, JavaScript, and responsive web layouts.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Interactive Chatbot Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header" id="chatHeader">
+            <span>💬 Skill Assistant</span>
+            <span class="minimize">-</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="msg bot">Hi! Type "skills" to see what you can learn today!</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 StudentSkillHub. Built via Vibe Coding.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
